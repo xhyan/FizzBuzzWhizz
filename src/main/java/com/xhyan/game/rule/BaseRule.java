@@ -4,7 +4,7 @@ package com.xhyan.game.rule;
  * 游戏规则
  */
 public abstract class BaseRule implements Comparable<BaseRule> {
-
+    protected static boolean isMatched = false;
     private int priority;       //规则执行优先级
     private boolean isEnd = false;      //是否是终止规则
 
@@ -30,5 +30,9 @@ public abstract class BaseRule implements Comparable<BaseRule> {
 
     public void setEnd (boolean isEnd) {
         this.isEnd = isEnd;
+    }
+
+    public static void clearMatchedStatus(){
+        BaseRule.isMatched = false;
     }
 }

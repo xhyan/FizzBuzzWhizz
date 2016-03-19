@@ -22,9 +22,10 @@ public class Executor {
 
 		for (int i = 1; i <= times; i++) {
 			Iterator<? extends BaseRule> it = ruleSets.iterator();
-
+			BaseRule.clearMatchedStatus();
 			while (it.hasNext()) {
 				BaseRule rule = it.next();
+
 				if (rule.checkRule(i) && rule.isEnd()) {
 					break;
 				}
